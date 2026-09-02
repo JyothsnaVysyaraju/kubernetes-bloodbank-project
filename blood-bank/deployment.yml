@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: bankapp-container
-        image: shaikmustafa/bloody:appimage
+        image: shaikmustafa/charan:app
         ports:
         - containerPort: 80
         envFrom:
