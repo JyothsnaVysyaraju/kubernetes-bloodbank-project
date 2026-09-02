@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: bankapp-container
-        image: shaikmustafa/chatan:db
+        image: shaikmustafa/charan:db
         ports:
         - containerPort: 3306
         envFrom:
