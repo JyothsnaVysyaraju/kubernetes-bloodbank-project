@@ -1,14 +1,16 @@
----
 apiVersion: v1
 kind: Service
+
 metadata:
   name: mysqldb
+
 spec:
-  ClusterIP: None
+  clusterIP: None
   selector:
     app: bankapp-db
+
   ports:
-    - protocol: TCP
+    - name: mysql
+      protocol: TCP
       port: 3306
       targetPort: 3306
-  
