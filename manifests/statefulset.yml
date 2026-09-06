@@ -23,7 +23,7 @@ spec:
 
       containers:
         - name: mysqldb
-          image: shaikmustafa/clientapp:dbimage
+          image: jyothsnav/clientapp:dbimage
           ports:
             - name: mysql
               containerPort: 3306
