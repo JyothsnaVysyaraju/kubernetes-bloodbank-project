@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: clientapp
-          image: shaikmustafa/clientapp:appimage
+          image: jyothsnav/clientapp:appimage
           ports:
             - containerPort: 80
           env:
