@@ -21,9 +21,23 @@ spec:
       imagePullSecrets:
         - name: mysecret
 
+      initContainers:
+        - name: prepare-mysql-data-directory
+          image: busybox:1.36
+          command:
+            - sh
+            - -c
+            - |
+              mkdir -p /mnt/mysql
+              chmod 777 /mnt/mysql
+          volumeMounts:
+            - name: mysql-data
+              mountPath: /mnt
+
       containers:
         - name: mysqldb
           image: jyothsnav/clientapp:dbimage
+          imagePullPolicy: Always
 
           env:
             - name: MYSQL_ROOT_PASSWORD
@@ -39,6 +53,7 @@ spec:
           volumeMounts:
             - name: mysql-data
               mountPath: /var/lib/mysql
+              subPath: mysql
 
   volumeClaimTemplates:
     - metadata:
